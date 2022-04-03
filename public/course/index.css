@@ -1,0 +1,42 @@
+                    :root {
+                       --gradient: linear-gradient(to left top, #dd9c24 10%, #7e3607da 90%);
+                   }
+                   
+                   body {
+                       background: rgba(133, 104, 73, .33);
+                   }
+                   
+                   .card {
+                       background: rgba(133, 104, 73, 0.9);
+                       border: 1px solid rgba(112, 66, 17, 0.33);
+                       color: rgba(250, 250, 250, 0.8);
+                       margin-bottom: 2rem;
+                   }
+                   
+                   .btn {
+                       border: 5px solid;
+                       border-image-slice: 1;
+                       background: var(--gradient);
+                       -webkit-text-fill-color: transparent;
+                       border-image-source: var(--gradient);
+                       text-decoration: none;
+                       transition: all .4s ease;
+                   }
+                   
+                   .btn:hover,
+                   .btn:focus {
+                       background: var(--gradient);
+                       -webkit-text-fill-color: #fff;
+                       border: 5px solid #fff;
+                       box-shadow: #222 1px 0 10px;
+                       text-decoration: underline;
+                   }
+                   
+                   .btnadd {
+                       padding: 20px;
+                       text-decoration: none;
+                   }
+                   
+                   .card-subtitle {
+                       color: #222;
+                   }
