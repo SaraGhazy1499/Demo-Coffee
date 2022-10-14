@@ -27,6 +27,9 @@ Route::resource('/students', EnrollController::class);
 
 Route::get('/mycourses/{id}',[CourseController::class,'mycourses'])->name("mycourses");
 
+
+Route::get('/mycourses_test',[CourseController::class,'mycourses_test']);
+
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

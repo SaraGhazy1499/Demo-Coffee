@@ -149,6 +149,50 @@ class CourseController extends Controller
         return redirect("/");
 
     }
+
+
+
+    
+
+    public function mycourses_test()
+    {
+        $user_id=auth()->user()->id;
+        if(Gate::allows("isTeacher")){
+        $user=User::find($user_id);
+          $mycourses=$user->courses_teacher()->select('id','name')->get();
+
+          $mycourses=$mycourses->toArray();
+          $arr=[];
+          foreach ($mycourses as $course) {
+            $course=Course::find($course['id']);
+            $t=$course->students()->get();
+             $t=$t->toArray();
+            foreach($t as $tt){
+                $arr1=
+                array(
+                    'student_id'=>$tt['id'],
+                    'name_student'=>$tt['name'],
+                    'course_id'=>$course['id'],
+                    'course_name'=>$course['name']
+
+                );
+
+              array_push($arr,$arr1);
+
+          }
+        }
+        return response()->json($arr);
+        }
+
+    }
+
+
 }
+
+
+
+
+
+
 
 
